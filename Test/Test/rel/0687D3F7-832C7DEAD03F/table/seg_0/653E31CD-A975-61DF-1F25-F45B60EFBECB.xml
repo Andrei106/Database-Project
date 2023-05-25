@@ -1,0 +1,79 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="653E31CD-A975-61DF-1F25-F45B60EFBECB" name="Oferta">
+<createdBy>Andrei</createdBy>
+<createdTime>2022-12-15 14:05:16 UTC</createdTime>
+<generatorID>E3A9F4C3-CC40-4025-9147-BB558351DB0E</generatorID>
+<ownerDesignName>Test</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="OFERTA_ID" id="467BC810-9275-19BF-BADB-28C1062A2165">
+<createdBy>Andrei</createdBy>
+<createdTime>2022-12-15 14:05:16 UTC</createdTime>
+<generatorID>4F2CC0E5-E3D9-1661-57E1-62ED4A8F943C</generatorID>
+<ownerDesignName>Test</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>4</dataTypePrecision>
+<ownDataTypeParameters>,4,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="start_date" id="E227696A-BEA2-4E38-1534-4464A83E2E87">
+<createdBy>Andrei</createdBy>
+<createdTime>2022-12-15 14:05:16 UTC</createdTime>
+<generatorID>2FFDBA56-08D0-6284-E366-BE9A6B474F76</generatorID>
+<ownerDesignName>Test</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="end_date" id="5B0F5123-3BDA-15D4-746E-12B338286FC4">
+<createdBy>Andrei</createdBy>
+<createdTime>2022-12-15 14:05:16 UTC</createdTime>
+<generatorID>02C13C45-65BA-427C-D0B9-04DE28A7E873</generatorID>
+<ownerDesignName>Test</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<checkConstraint>
+<implementationDef dbType="Generic Constraint" definition="end_date &gt;= start_date"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="discount" id="78BD0EC5-69E3-BAED-01E0-3661CFB27ACC">
+<createdBy>Andrei</createdBy>
+<createdTime>2022-12-15 14:05:16 UTC</createdTime>
+<generatorID>D43640C7-125D-6BE4-F299-75772D5103C6</generatorID>
+<ownerDesignName>Test</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<checkConstraint>
+<implementationDef dbType="Generic Constraint" definition="discount&gt;0 "/>
+</checkConstraint>
+<ownDataTypeParameters>,2,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="5B5E13A3-CF73-7051-22A5-D3597700544F" name="Oferte_PK">
+<createdBy>Andrei</createdBy>
+<createdTime>2022-12-15 14:05:16 UTC</createdTime>
+<generatorID>EE7A8518-62D3-F4D0-366F-1BC261AC48AE</generatorID>
+<ownerDesignName>Test</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="467BC810-9275-19BF-BADB-28C1062A2165"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

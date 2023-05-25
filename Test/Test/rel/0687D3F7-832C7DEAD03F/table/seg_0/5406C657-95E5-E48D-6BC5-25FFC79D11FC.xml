@@ -1,0 +1,201 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="5406C657-95E5-E48D-6BC5-25FFC79D11FC" name="Instrument">
+<createdBy>Andrei</createdBy>
+<createdTime>2022-12-15 14:05:16 UTC</createdTime>
+<generatorID>311D392C-0AE9-61CF-75EF-E48EDB895C18</generatorID>
+<ownerDesignName>Test</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="INSTRUMENT_ID" id="9D6081AF-37FD-C106-D55F-FA7CC3095E97">
+<createdBy>Andrei</createdBy>
+<createdTime>2022-12-15 14:05:16 UTC</createdTime>
+<generatorID>0574B8AD-204D-2477-146D-25158C60EB78</generatorID>
+<ownerDesignName>Test</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Instrument_name" id="5BB6A9C3-6D23-01A6-C10E-C7584C422E27">
+<createdBy>Andrei</createdBy>
+<createdTime>2022-12-15 14:05:16 UTC</createdTime>
+<generatorID>E05747CA-31D7-7C96-5C61-0D6F635BB0E2</generatorID>
+<ownerDesignName>Test</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<checkConstraint>
+<implementationDef dbType="Generic Constraint" definition="length(instrument_name)&gt;0"/>
+</checkConstraint>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Description" id="A7CF5063-C0D3-E446-FCE9-847246DCD158">
+<createdBy>Andrei</createdBy>
+<createdTime>2022-12-15 14:05:16 UTC</createdTime>
+<generatorID>20A97CD6-4AA0-CE55-9E46-FC6925329597</generatorID>
+<ownerDesignName>Test</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>1000</dataTypeSize>
+<ownDataTypeParameters>1000,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Price" id="C5A90E62-7377-8869-62FC-1F0EBAA2C843">
+<createdBy>Andrei</createdBy>
+<createdTime>2022-12-15 14:05:16 UTC</createdTime>
+<generatorID>F3ACB3F3-FBAF-01DD-003B-34BA251387C8</generatorID>
+<ownerDesignName>Test</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<checkConstraint>
+<implementationDef dbType="Generic Constraint" definition="Price &gt; 0"/>
+</checkConstraint>
+<ownDataTypeParameters>,6,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Stock" id="C8411976-5676-D2C5-A0CC-EF48D3B3501F">
+<createdBy>Andrei</createdBy>
+<createdTime>2022-12-15 14:05:16 UTC</createdTime>
+<generatorID>C1B289D1-9BC8-A4F6-9FF9-482F668F818C</generatorID>
+<ownerDesignName>Test</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<checkConstraint>
+<implementationDef dbType="Generic Constraint" definition="Stock &gt; 0 "/>
+</checkConstraint>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MANUFACTURER_ID" id="525211F3-AA7C-D324-DCB1-07B2725DB0DF">
+<createdBy>Andrei</createdBy>
+<createdTime>2022-12-15 14:05:16 UTC</createdTime>
+<generatorID>92A33A52-6E71-9301-1CC9-3E6C3AA19AE8</generatorID>
+<ownerDesignName>Test</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E057C3C5-2C1E-6EDD-C66A-DC5C0B359864" referredColumn="1F4204BC-21A3-0600-1060-D814EB68545A"/>
+</associations>
+</Column>
+<Column name="TYPE_ID" id="61E2D85A-6AF7-48DC-F5B0-7D4E21916DC1">
+<createdBy>Andrei</createdBy>
+<createdTime>2022-12-15 14:05:16 UTC</createdTime>
+<generatorID>4082294C-34B1-2E13-C6FD-66CFC7964724</generatorID>
+<ownerDesignName>Test</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="2472744B-234B-1F3E-FCA2-79AF731DF58E" referredColumn="B92B83C6-6A62-36B2-EF5B-04B25BC2671A"/>
+</associations>
+</Column>
+<Column name="OFERTA_ID" id="A1A4A123-7D42-31B1-80F6-94D960013358">
+<createdBy>Andrei</createdBy>
+<createdTime>2022-12-15 14:05:16 UTC</createdTime>
+<generatorID>9FE74922-F4C3-2C8A-93A6-7E83A9B199C1</generatorID>
+<ownerDesignName>Test</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>4</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="B007D845-352C-E638-AA6B-092C79F96CF5" referredColumn="467BC810-9275-19BF-BADB-28C1062A2165"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="F311A171-77BA-E895-E138-F08DE4451876" name="Instrument_PK">
+<createdBy>Andrei</createdBy>
+<createdTime>2022-12-15 14:05:16 UTC</createdTime>
+<generatorID>FF02A9F0-46C1-13D2-C909-19ECC5405E3B</generatorID>
+<ownerDesignName>Test</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9D6081AF-37FD-C106-D55F-FA7CC3095E97"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="4B645B2C-3E73-6125-9B85-AA1F169DB8A7" name="Instrument_name">
+<createdBy>Andrei</createdBy>
+<createdTime>2022-12-15 14:05:16 UTC</createdTime>
+<generatorID>14FDE5B7-733B-C4A4-42F2-01181B25C5F5</generatorID>
+<ownerDesignName>Test</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5BB6A9C3-6D23-01A6-C10E-C7584C422E27"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="922CACF0-E299-E4FD-9493-2E3F717E8EA7" name="Instrument__IDX">
+<createdBy>Andrei</createdBy>
+<createdTime>2022-12-15 14:05:16 UTC</createdTime>
+<ownerDesignName>Test</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>5F08C47D-8CF0-2DD6-B398-FC3967F7DA06</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="A1A4A123-7D42-31B1-80F6-94D960013358"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="05ACEFBC-2B85-D91D-EF48-E70E0FFB7DE8" name="manufacturer_instrument">
+<createdBy>Andrei</createdBy>
+<createdTime>2022-12-15 14:05:16 UTC</createdTime>
+<generatorID>9075790C-C9BE-025E-2CFD-84BE15F10FFC</generatorID>
+<ownerDesignName>Test</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="525211F3-AA7C-D324-DCB1-07B2725DB0DF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="6D6B3035-7B0C-8994-E79A-70C1EC9580E0" name="oferta_instrument">
+<createdBy>Andrei</createdBy>
+<createdTime>2022-12-15 14:05:16 UTC</createdTime>
+<generatorID>5F08C47D-8CF0-2DD6-B398-FC3967F7DA06</generatorID>
+<ownerDesignName>Test</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A1A4A123-7D42-31B1-80F6-94D960013358"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="5170796C-EC32-0CB0-0587-8C7D50DEB125" name="type_instrument">
+<createdBy>Andrei</createdBy>
+<createdTime>2022-12-15 14:05:16 UTC</createdTime>
+<generatorID>CDA1D6E1-EB4D-5C69-B565-35D4E7A05D38</generatorID>
+<ownerDesignName>Test</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="61E2D85A-6AF7-48DC-F5B0-7D4E21916DC1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

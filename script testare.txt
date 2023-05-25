@@ -1,0 +1,186 @@
+
+
+
+--Descrieri
+desc category;
+desc type;
+desc instrument;
+desc manufacturer;
+desc orders;
+desc oferta;
+desc client;
+desc order_instrument;
+
+
+--Afisari 
+select * from category;
+select * from type;
+select * from manufacturer;
+select * from oferta;
+select * from instrument;
+select * from client;
+select * from orders;
+select * from order_instrument;
+
+--Interogari
+--afisare produse comandate de toti clientii
+select distinct i.instrument_name  from order_instrument o ,instrument i where o.instrument_instrument_id=i.instrument_id;
+
+--afisare clienti si produse a caror comanda a fost livrata 
+select  distinct c.first_name,last_name, i.instrument_name,ord.status
+from client c, order_instrument o ,orders ord,instrument i 
+where c.client_id=ord.client_id and o.orders_order_id=ord.order_id and o.instrument_instrument_id=i.instrument_id and ord.status='Delivered';
+
+--afisare numar comanda,clienti si produse a caror comanda este procesata 
+select  ord.order_id, c.first_name,last_name, i.instrument_name,ord.status
+from client c, order_instrument o ,orders ord,instrument i 
+where c.client_id=ord.client_id and o.orders_order_id=ord.order_id and o.instrument_instrument_id=i.instrument_id and ord.status='In process';
+
+--afisare clientilor cu produse returnate
+select  c.first_name,i.instrument_name,o.status ,oi.quantity 
+from orders o,order_instrument oi ,instrument i ,client c 
+where oi.instrument_instrument_id=i.instrument_id and o.client_id=c.client_id 
+and o.order_id= oi.orders_order_id and status='Returned';
+
+--afisare produse , pret si stoc
+select i.instrument_name,i.price,i.stock
+from instrument i order by i.price desc;
+
+--afisare instrumente de la un anumit producator(ex:Ibanez)
+select i.instrument_name,m.manufacturer_name
+from instrument i,manufacturer m
+where i.manufacturer_id=m.manufacturer_id and m.manufacturer_name='Ibanez'; 
+
+--afisare instrumente + tipul dintr-o anumita categorie(ex:Instrumente cu corzi)
+select i.instrument_name,c.category_name,t.type_name
+from instrument i,category c,type t
+where i.type_id=t.type_id and t.category_id=c.category_id and c.category_name='Instrumente cu corzi'; 
+
+--afisare numar total produse comandate  
+select sum(oi.quantity)
+from  order_instrument oi;
+
+--actualizare stoc produs
+update instrument 
+set stock = 10000
+where instrument_name='Ibanez JGM5-BSN';
+
+--afisare persoane a caror email-uri contin litarea 'j'
+select c.first_name,c.last_name,c.email
+from client c
+where c.email like '%j%';
+
+--actualizare oferta produs
+update instrument
+set oferta_id = 1
+where instrument_id =2;
+select * from instrument;
+
+--afisare produse,tip cu pret mai mare sau egal cu 10000
+select i.instrument_name,t.type_name,i.price
+from instrument i
+join type t on t.type_id=i.type_id
+where i.price >=10000;
+
+--afisare instrumente cu producatori dintr-o anumita tara(ex:Germania)
+select i.instrument_name,m.manufacturer_name, m.country
+from instrument i
+join manufacturer m on m.manufacturer_id=i.manufacturer_id
+where m.country='Germania'
+;
+--afisare produse cu oferta + discount oferit , durata oferta si pretul nou
+
+select i.instrument_name, o.discount, o.start_date,o.end_date,i.price "Pret Vechi",(i.price-(i.price * o.discount/100)) "Pret Nou"
+from instrument i
+join oferta o on o.oferta_id=i.oferta_id
+;
+
+-- afisare nume client,produse comandate ,oferta,discount-ul,pretul vechi si cel actual,producator,statusul comenzii,cantitatea produselor,tipul si categoria produsului 
+select c.first_name,c.last_name,i.instrument_name,ofer.oferta_id,ofer.discount,i.price "Pret Vechi",nvl((i.price-(i.price * ofer.discount/100)),i.price) "Pret Actual",m.manufacturer_name,o.status,oi.quantity,t.type_name,cat.category_name
+from order_instrument oi
+join instrument i on oi.instrument_instrument_id=i.instrument_id
+left join oferta ofer on ofer.oferta_id=i.oferta_id
+join  manufacturer m on m.manufacturer_id=i.manufacturer_id
+join orders o on o.order_id=orders_order_id
+join client c on c.client_id=o.client_id
+join type t on t.type_id=i.type_id
+join category cat on cat.category_id=t.category_id
+;
+
+
+--Stergere
+
+DROP TABLE category CASCADE CONSTRAINTS;
+DROP TABLE type CASCADE CONSTRAINTS;
+DROP TABLE client CASCADE CONSTRAINTS;
+DROP TABLE orders CASCADE CONSTRAINTS;
+DROP TABLE instrument CASCADE CONSTRAINTS;
+DROP TABLE manufacturer CASCADE CONSTRAINTS;
+DROP TABLE oferta CASCADE CONSTRAINTS;
+DROP TABLE order_instrument CASCADE CONSTRAINTS;
+
+--drop trigger category_category_id_trg;
+--drop trigger client_client_id_trg;
+--drop trigger INSTRUMENT_INSTRUMENT_ID_TRG;
+--drop trigger manufacturer_manufacturer_id;
+--drop trigger oferta_oferta_id_trg;
+--drop trigger orders_client_id_trg;
+--drop trigger Trg_end_BRIU;
+--drop trigger Trg_start_BRIU;
+--drop trigger type_type_id_trg;
+--drop trigger orders_order_id_trg;
+
+drop sequence category_category_id_seq;
+drop sequence type_type_id_seq;
+drop sequence orders_order_id_seq;
+drop sequence client_client_id_seq;
+drop sequence INSTRUMENT_INSTRUMENT_ID_SEQ;
+drop sequence manufacturer_manufacturer_id;
+drop sequence oferta_oferta_id_seq;
+--drop sequence orders_client_id_seq;
+
+
+
+
+--Validari
+--eroare:numele este unic 
+insert into category(category_name) values ('Instrumente cu corzi');--id 1
+--eroare:numele sa nu contina cifre 
+insert into category(category_name) values ('Instrumente cu co2rzi');--id 1
+insert into type(type_name,category_id) values ('Chitar2e',1);--1
+insert into manufacturer(manufacturer_name,country) values ('Bat3on Rouge','Germania');--1
+insert into manufacturer(manufacturer_name,country) values ('Bat3on Rouge','Germa3nia');--1
+--eroare start_date mai mica decat data curenta
+insert into oferta(start_date,end_date,discount) values('20-DEC-2019','25-DEC-2023',5);--1
+--eroare end_date mai mica decat data curenta
+insert into oferta(start_date,end_date,discount) values('20-DEC-2023','25-DEC-2019',5);--1
+--eroare end_date mai mica decat start_date
+insert into oferta(start_date,end_date,discount) values('20-DEC-2023','18-DEC-2023',5);--1
+--eroare discount trebuie sa fie mai mare ca 0
+insert into oferta(start_date,end_date,discount) values('20-DEC-2023','28-DEC-2023',0);--1
+--eroare nume unic
+insert into instrument(instrument_name,description,price,stock,oferta_id,manufacturer_id,type_id) values('Baton Rouge X6C/AC-AF','Descriere',350,27000,null,1,1);--1
+--eroare price mai mic ca 1
+insert into instrument(instrument_name,description,price,stock,oferta_id,manufacturer_id,type_id) values('Baton Rouge X6C/AC-AF2','Descriere',0,27000,null,1,1);--1
+--eroare stock mai mic ca 1
+insert into instrument(instrument_name,description,price,stock,oferta_id,manufacturer_id,type_id) values('Baton Rouge X6C/AC-AF3','Descriere',350,0,null,1,1);--1
+--eroare status poate fi doar intre 'In process','Returned','Delivered'
+insert into orders(client_id,status) values(1,'In pr2ocess');--1
+--eroare quantity mai mic ca 1
+insert into order_instrument(orders_order_id,instrument_instrument_id,quantity)
+values (1,13,0);--1
+--eroare quantity nu poate fi null
+insert into order_instrument(orders_order_id,instrument_instrument_id,quantity)
+values (1,13);--1
+--eroare email trebuie sa fie de forma  a@b.c
+insert into client(first_name,last_name,email,country,phone_number,city) values ('Alex','Popescu','alex_popescugmail','Romania','1234567890','Iasi');--1
+--eroare email trebuie sa fie de forma XXXXXXXXXX sau XXX-XXXXXXX sau XXX-XXX-XXXX
+insert into client(first_name,last_name,email,country,phone_number,city) values ('Alex','Popescu','alex_popescugmail','Romania','12-34567890','Iasi');--1
+--eroare oferta unica pe produs
+update instrument
+set oferta_id = 1
+where instrument_id =1;
+
+
+
+

@@ -1,0 +1,151 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="0610761A-8AC4-78F7-F6DD-3529BC07B63E" name="Client">
+<createdBy>Andrei</createdBy>
+<createdTime>2022-12-15 14:05:16 UTC</createdTime>
+<generatorID>C2970F61-8667-E50E-E93A-34F872F682C9</generatorID>
+<ownerDesignName>Test</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="CLIENT_ID" id="B025B95A-7E78-F67F-F257-F42294657873">
+<createdBy>Andrei</createdBy>
+<createdTime>2022-12-15 14:05:16 UTC</createdTime>
+<generatorID>21EE1117-6506-2695-0208-694260B8940E</generatorID>
+<ownerDesignName>Test</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="first_name" id="86745F1E-6E14-AF3C-D5C3-9878D943B0C9">
+<createdBy>Andrei</createdBy>
+<createdTime>2022-12-15 14:05:16 UTC</createdTime>
+<generatorID>D2652423-9C7B-C554-A561-D8306F0BB591</generatorID>
+<ownerDesignName>Test</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<checkConstraint>
+<implementationDef dbType="Generic Constraint" definition="(regexp_like(first_name,&apos;^[a-zA-Z ]*$&apos;) ) and ( length(first_name)&gt;0 ) "/>
+</checkConstraint>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="last_name" id="6583949C-1AF7-D418-532E-14736C0B029E">
+<createdBy>Andrei</createdBy>
+<createdTime>2022-12-15 14:05:16 UTC</createdTime>
+<generatorID>81906646-2486-F662-EEEA-04C66A40BF39</generatorID>
+<ownerDesignName>Test</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<checkConstraint>
+<implementationDef dbType="Generic Constraint" definition="(regexp_like(last_name, &apos;^[a-zA-Z ]*$&apos; ) ) and ( length(last_name)&gt;0 ) "/>
+</checkConstraint>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="email" id="BBA7A204-DE85-40D6-9D18-93C4C1C5922F">
+<createdBy>Andrei</createdBy>
+<createdTime>2022-12-15 14:05:16 UTC</createdTime>
+<generatorID>00A2E85B-7503-7F59-9A21-AACEDC817DAB</generatorID>
+<ownerDesignName>Test</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<checkConstraint>
+<implementationDef dbType="Generic Constraint" definition="(regexp_like(email, &apos;[a-z0-9._%-]+@[a-z0-9._%-]+\.[a-z]{2,4}&apos;)) and ( length(email) &gt; 4)"/>
+</checkConstraint>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="country" id="53461748-C833-E1A2-DE2D-3AF6C5FF8A26">
+<createdBy>Andrei</createdBy>
+<createdTime>2022-12-15 14:05:16 UTC</createdTime>
+<generatorID>C60F4352-2459-6793-F700-EB3888F78445</generatorID>
+<ownerDesignName>Test</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>80</dataTypeSize>
+<checkConstraint>
+<implementationDef dbType="Generic Constraint" definition="(regexp_like(country, &apos;^[a-zA-Z ]*$&apos; ) ) and ( length(country)&gt;0 ) "/>
+</checkConstraint>
+<ownDataTypeParameters>80,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="phone_number" id="704CDF42-FB0A-B335-A8FF-B68A635DA2D7">
+<createdBy>Andrei</createdBy>
+<createdTime>2022-12-15 14:05:16 UTC</createdTime>
+<generatorID>0C716722-2ED1-FB72-181C-220B4DD18B24</generatorID>
+<ownerDesignName>Test</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>12</dataTypeSize>
+<checkConstraint>
+<implementationDef dbType="Generic Constraint" definition="regexp_like (phone_number,&apos;^(\d{3}-\d{3}-?\d{4}|\d{10})$&apos;) "/>
+</checkConstraint>
+<ownDataTypeParameters>12,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="city" id="0540DE21-BCAE-48E6-8424-407A1890B6EE">
+<createdBy>Andrei</createdBy>
+<createdTime>2022-12-15 14:05:16 UTC</createdTime>
+<generatorID>B3A81BB3-7F2B-C83F-212B-1E30E365635F</generatorID>
+<ownerDesignName>Test</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<checkConstraint>
+<implementationDef dbType="Generic Constraint" definition="(regexp_like(city, &apos;^[a-zA-Z ]*$&apos; ) ) and ( length(city)&gt;0 ) "/>
+</checkConstraint>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="AF094992-138D-D788-BFC0-26B2E4E660A9" name="Client_PK">
+<createdBy>Andrei</createdBy>
+<createdTime>2022-12-15 14:05:16 UTC</createdTime>
+<generatorID>280CCAFD-CB64-4193-F840-AB1D261562BC</generatorID>
+<ownerDesignName>Test</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B025B95A-7E78-F67F-F257-F42294657873"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E943D93C-F34A-7485-C1F3-E5C562559337" name="client_email">
+<createdBy>Andrei</createdBy>
+<createdTime>2022-12-15 14:05:16 UTC</createdTime>
+<generatorID>C3B2FD8C-9DAF-4651-5C3F-4B7EFFBA30FD</generatorID>
+<ownerDesignName>Test</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BBA7A204-DE85-40D6-9D18-93C4C1C5922F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="589D6CA8-AC9C-1129-174E-7760A0EDA46F" name="phone_number">
+<createdBy>Andrei</createdBy>
+<createdTime>2022-12-15 14:05:16 UTC</createdTime>
+<generatorID>8D14DD81-F80B-A6AE-E71C-69C8A4F88DA0</generatorID>
+<ownerDesignName>Test</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="704CDF42-FB0A-B335-A8FF-B68A635DA2D7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

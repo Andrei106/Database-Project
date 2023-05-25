@@ -1,0 +1,83 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="1054DAA0-49D0-8734-50FC-B24D826CC347" name="Orders">
+<createdBy>Andrei</createdBy>
+<createdTime>2022-12-15 14:05:16 UTC</createdTime>
+<generatorID>DFBB13CF-13B7-A04C-C0A3-3A0110B18E4A</generatorID>
+<ownerDesignName>Test</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="CLIENT_ID" id="2DDC28E8-C030-3C44-8746-381CE2BF8EA3">
+<createdBy>Andrei</createdBy>
+<createdTime>2022-12-15 14:05:16 UTC</createdTime>
+<generatorID>0B957E96-C6C1-3679-E531-0D3BD5E09625</generatorID>
+<ownerDesignName>Test</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="A8F059DB-0264-7890-EB9C-F265D0B7A13F" referredColumn="B025B95A-7E78-F67F-F257-F42294657873"/>
+</associations>
+</Column>
+<Column name="ORDER_ID" id="EAE6B3F0-61AE-2A6C-DA69-6666ED0A4A4C">
+<createdBy>Andrei</createdBy>
+<createdTime>2022-12-15 14:05:16 UTC</createdTime>
+<generatorID>738F77E6-5C5E-73E2-52AD-1660F6C699D8</generatorID>
+<ownerDesignName>Test</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="status" id="9EF3BB1E-C0D7-16DD-B497-CEAE91970509">
+<createdBy>Andrei</createdBy>
+<createdTime>2022-12-15 14:05:16 UTC</createdTime>
+<generatorID>D5944E56-BC60-E123-AD3B-0778760D0B1E</generatorID>
+<ownerDesignName>Test</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<listOfValues>
+<valueDef value="Delivered" description=""/>
+<valueDef value="In process" description=""/>
+<valueDef value="Returned" description=""/>
+</listOfValues>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="0463C8A7-51CB-F878-39D1-B3836664E6AA" name="Comanda_PK">
+<createdBy>Andrei</createdBy>
+<createdTime>2022-12-15 14:05:16 UTC</createdTime>
+<generatorID>FF56F4C1-372D-E7FB-0BA0-396874A85786</generatorID>
+<ownerDesignName>Test</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EAE6B3F0-61AE-2A6C-DA69-6666ED0A4A4C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="CC5259C1-53C6-91EF-5DD7-CDB7E8BADD34" name="client_comanda">
+<createdBy>Andrei</createdBy>
+<createdTime>2022-12-15 14:05:16 UTC</createdTime>
+<generatorID>941377AE-D239-80C7-F713-3AAE5D61AC96</generatorID>
+<ownerDesignName>Test</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2DDC28E8-C030-3C44-8746-381CE2BF8EA3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

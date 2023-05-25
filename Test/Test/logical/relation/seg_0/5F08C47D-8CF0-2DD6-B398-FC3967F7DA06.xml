@@ -1,0 +1,23 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="oferta_instrument" directorySegmentName="seg_0" id="5F08C47D-8CF0-2DD6-B398-FC3967F7DA06">
+<createdBy>Andrei</createdBy>
+<createdTime>2022-11-26 19:27:48 UTC</createdTime>
+<ownerDesignName>Test</ownerDesignName>
+<engineerTo>
+<item key="0687D3F7-D0BF-B477-D719-832C7DEAD03F" value="true"/>
+</engineerTo>
+<sourcePk>EE7A8518-62D3-F4D0-366F-1BC261AC48AE</sourcePk>
+<targetPk>FF02A9F0-46C1-13D2-C909-19ECC5405E3B</targetPk>
+<dominantRole>E3A9F4C3-CC40-4025-9147-BB558351DB0E</dominantRole>
+<identifying>false</identifying>
+<nameOnSource>apartin</nameOnSource>
+<nameOnTarget>au</nameOnTarget>
+<optionalSource>true</optionalSource>
+<optionalTarget>true</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>E3A9F4C3-CC40-4025-9147-BB558351DB0E</sourceEntity>
+<targetCardinalityString>1</targetCardinalityString>
+<targetEntity>311D392C-0AE9-61CF-75EF-E48EDB895C18</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

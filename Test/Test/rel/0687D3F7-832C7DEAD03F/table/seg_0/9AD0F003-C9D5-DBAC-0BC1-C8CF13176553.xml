@@ -1,0 +1,92 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="9AD0F003-C9D5-DBAC-0BC1-C8CF13176553" name="Type">
+<createdBy>Andrei</createdBy>
+<createdTime>2022-12-15 14:05:16 UTC</createdTime>
+<generatorID>A60C7A7D-48E4-AABA-99FD-6D8151C73042</generatorID>
+<ownerDesignName>Test</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="TYPE_ID" id="B92B83C6-6A62-36B2-EF5B-04B25BC2671A">
+<createdBy>Andrei</createdBy>
+<createdTime>2022-12-15 14:05:16 UTC</createdTime>
+<generatorID>3BF5A6A5-72DE-FD95-C323-EABFB5E83C13</generatorID>
+<ownerDesignName>Test</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,3,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="type_name" id="5C4180AF-81AC-DAC5-5BB6-BD8442EAF524">
+<createdBy>Andrei</createdBy>
+<createdTime>2022-12-15 14:05:16 UTC</createdTime>
+<generatorID>7EE928FC-5D2D-495D-0765-90FECB22745D</generatorID>
+<ownerDesignName>Test</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<checkConstraint>
+<implementationDef dbType="Generic Constraint" definition="(regexp_like(type_name,&apos;^[a-zA-Z ]*$&apos;  ) ) and ( length(type_name)&gt;0 ) "/>
+</checkConstraint>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CATEGORY_ID" id="8E684EB4-07D2-229B-EB49-FE8B33DDD0BC">
+<createdBy>Andrei</createdBy>
+<createdTime>2022-12-15 14:05:16 UTC</createdTime>
+<generatorID>C8F87F1F-DF1A-FFD9-9D9A-90FFA1C00064</generatorID>
+<ownerDesignName>Test</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="BB69B872-84EF-97A6-9A20-85CFF2747DD9" referredColumn="C47CDDC7-8F71-9944-B2E0-6DB0B2D32A64"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="C647EE84-2F80-43C7-03C7-8396CECABB4F" name="Type_PK">
+<createdBy>Andrei</createdBy>
+<createdTime>2022-12-15 14:05:16 UTC</createdTime>
+<generatorID>623FDCD9-00EC-15F2-2572-0625CA3F44D9</generatorID>
+<ownerDesignName>Test</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B92B83C6-6A62-36B2-EF5B-04B25BC2671A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2665A1D7-170D-7DE9-51E7-CD0B94CBA059" name="type_name">
+<createdBy>Andrei</createdBy>
+<createdTime>2022-12-15 14:05:16 UTC</createdTime>
+<generatorID>F7C2A28B-1611-8063-D218-320EF06A1F11</generatorID>
+<ownerDesignName>Test</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5C4180AF-81AC-DAC5-5BB6-BD8442EAF524"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="7780F00B-DD32-681A-0BE0-6991B1FC4F14" name="category_type">
+<createdBy>Andrei</createdBy>
+<createdTime>2022-12-15 14:05:16 UTC</createdTime>
+<generatorID>71344E50-9A1F-89F7-EC08-D1060A338A20</generatorID>
+<ownerDesignName>Test</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8E684EB4-07D2-229B-EB49-FE8B33DDD0BC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

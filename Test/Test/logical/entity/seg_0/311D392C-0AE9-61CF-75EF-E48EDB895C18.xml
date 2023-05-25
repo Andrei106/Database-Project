@@ -1,0 +1,166 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="311D392C-0AE9-61CF-75EF-E48EDB895C18" name="Instrument">
+<createdBy>Andrei</createdBy>
+<createdTime>2022-10-30 14:52:50 UTC</createdTime>
+<ownerDesignName>Test</ownerDesignName>
+<engineerTo>
+<item key="0687D3F7-D0BF-B477-D719-832C7DEAD03F" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="INSTRUMENT_ID" id="0574B8AD-204D-2477-146D-25158C60EB78">
+<createdBy>Andrei</createdBy>
+<createdTime>2022-10-30 14:57:47 UTC</createdTime>
+<ownerDesignName>Test</ownerDesignName>
+<engineerTo>
+<item key="0687D3F7-D0BF-B477-D719-832C7DEAD03F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Instrument_name" id="E05747CA-31D7-7C96-5C61-0D6F635BB0E2">
+<createdBy>Andrei</createdBy>
+<createdTime>2022-10-30 15:37:21 UTC</createdTime>
+<ownerDesignName>Test</ownerDesignName>
+<engineerTo>
+<item key="0687D3F7-D0BF-B477-D719-832C7DEAD03F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<checkConstraint>
+<implementationDef dbType="Generic Constraint" definition="length(instrument_name)&gt;0"/>
+</checkConstraint>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Description" id="20A97CD6-4AA0-CE55-9E46-FC6925329597">
+<createdBy>Andrei</createdBy>
+<createdTime>2022-10-30 14:57:52 UTC</createdTime>
+<ownerDesignName>Test</ownerDesignName>
+<engineerTo>
+<item key="0687D3F7-D0BF-B477-D719-832C7DEAD03F" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>1000</dataTypeSize>
+<ownDataTypeParameters>1000,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Price" id="F3ACB3F3-FBAF-01DD-003B-34BA251387C8">
+<createdBy>Andrei</createdBy>
+<createdTime>2022-10-30 14:57:53 UTC</createdTime>
+<ownerDesignName>Test</ownerDesignName>
+<engineerTo>
+<item key="0687D3F7-D0BF-B477-D719-832C7DEAD03F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<checkConstraint>
+<implementationDef dbType="Generic Constraint" definition="Price &gt; 0"/>
+</checkConstraint>
+<ownDataTypeParameters>,6,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Stock" id="C1B289D1-9BC8-A4F6-9FF9-482F668F818C">
+<createdBy>Andrei</createdBy>
+<createdTime>2022-10-30 14:57:55 UTC</createdTime>
+<ownerDesignName>Test</ownerDesignName>
+<engineerTo>
+<item key="0687D3F7-D0BF-B477-D719-832C7DEAD03F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<checkConstraint>
+<implementationDef dbType="Generic Constraint" definition="Stock &gt; 0 "/>
+</checkConstraint>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="MANUFACTURER_ID" id="92A33A52-6E71-9301-1CC9-3E6C3AA19AE8">
+<createdBy>Andrei</createdBy>
+<createdTime>2022-11-04 11:34:53 UTC</createdTime>
+<generatorID>9075790C-C9BE-025E-2CFD-84BE15F10FFC</generatorID>
+<ownerDesignName>Test</ownerDesignName>
+<engineerTo>
+<item key="0687D3F7-D0BF-B477-D719-832C7DEAD03F" value="true"/>
+</engineerTo>
+<referedAttribute>6741AC62-081B-F4DE-9BE8-80A411049A5B</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<ownDataTypeParameters>,2,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="TYPE_ID" id="4082294C-34B1-2E13-C6FD-66CFC7964724">
+<createdBy>Andrei</createdBy>
+<createdTime>2022-11-18 10:50:03 UTC</createdTime>
+<generatorID>CDA1D6E1-EB4D-5C69-B565-35D4E7A05D38</generatorID>
+<ownerDesignName>Test</ownerDesignName>
+<engineerTo>
+<item key="0687D3F7-D0BF-B477-D719-832C7DEAD03F" value="true"/>
+</engineerTo>
+<referedAttribute>3BF5A6A5-72DE-FD95-C323-EABFB5E83C13</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,3,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="OFERTA_ID" id="9FE74922-F4C3-2C8A-93A6-7E83A9B199C1">
+<createdBy>Andrei</createdBy>
+<createdTime>2022-11-26 19:27:48 UTC</createdTime>
+<generatorID>5F08C47D-8CF0-2DD6-B398-FC3967F7DA06</generatorID>
+<ownerDesignName>Test</ownerDesignName>
+<engineerTo>
+<item key="0687D3F7-D0BF-B477-D719-832C7DEAD03F" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>4F2CC0E5-E3D9-1661-57E1-62ED4A8F943C</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>4</dataTypePrecision>
+<ownDataTypeParameters>,4,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="FF02A9F0-46C1-13D2-C909-19ECC5405E3B" name="Instrument_PK">
+<createdBy>Andrei</createdBy>
+<createdTime>2022-10-30 14:58:11 UTC</createdTime>
+<ownerDesignName>Test</ownerDesignName>
+<engineerTo>
+<item key="0687D3F7-D0BF-B477-D719-832C7DEAD03F" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>0574B8AD-204D-2477-146D-25158C60EB78</attributeRef>
+</usedAttributes>
+</identifier>
+<identifier id="14FDE5B7-733B-C4A4-42F2-01181B25C5F5" name="Instrument_name">
+<createdBy>Andrei</createdBy>
+<createdTime>2022-11-14 20:59:31 UTC</createdTime>
+<ownerDesignName>Test</ownerDesignName>
+<engineerTo>
+<item key="0687D3F7-D0BF-B477-D719-832C7DEAD03F" value="true"/>
+</engineerTo>
+<newElementsIDs>E05747CA-31D7-7C96-5C61-0D6F635BB0E2</newElementsIDs>
+<usedAttributes>
+<attributeRef>E05747CA-31D7-7C96-5C61-0D6F635BB0E2</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>
